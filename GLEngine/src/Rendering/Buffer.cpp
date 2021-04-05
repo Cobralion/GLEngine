@@ -1,45 +1,40 @@
 ﻿#include "Buffer.h"
 
-#include "BufferFactory.h"
+#include <exception>
+
+
 #include "OpenGL.h"
 
 namespace gle::Rendering
 {
-	Buffer::Buffer(uint32_t rendererID, BufferType type) : Bindable(), m_rendererId(rendererID), m_type(type)
+	Buffer::Buffer(BufferType type, uint32_t size) : Bindable(), m_type(type), m_size(size), m_sizePerElement(0)
 	{
-		++BufferFactory::m_bufferAmount;
-		glBufferData((uint32_t) type, 0, nullptr, GL_)
+		glGenBuffers(1, &m_rendererId);
+		glBufferData((uint32_t)m_type, m_size, nullptr, GL_DYNAMIC_DRAW);
 	}
 
 	Buffer::~Buffer()
 	{
-		--BufferFactory::m_bufferAmount;
+		glDeleteBuffers(1, &m_rendererId);
 	}
 
 	void Buffer::Bind() const noexcept
 	{
-		glBindBuffer((uint32_t)m_type, m_rendererId);
+		glBindBuffer(static_cast<uint32_t>(m_type), m_rendererId);
 	}
 
 	void Buffer::Unbind() const noexcept
 	{
-		glBindBuffer((uint32_t)m_type, 0);
+		glBindBuffer(static_cast<uint32_t>(m_type), 0);
 	}
 
-	void Buffer::Update() noexcept
+	void Buffer::Update(const void* data, uint32_t size, uint32_t sizePerElement)
 	{
-		glBufferData()
-	}
+		if (m_size < size) throw std::exception("Size can not be greater than initial size");
+		if (size % sizePerElement != 0) throw std::exception("Size must be a integer multiple of sizePerEntry");
 
-	Buffer::Buffer(Buffer&& other) noexcept: m_rendererId(other.m_rendererId)
-	{
-	}
-
-	Buffer& Buffer::operator=(Buffer&& other) noexcept
-	{
-		if (this == &other)
-			return *this;
-		m_rendererId = other.m_rendererId;
-		return *this;
+		m_sizePerElement = sizePerElement;
+		m_realSize = size;
+		glBufferSubData(static_cast<uint32_t>(m_type), 0, m_size, data);
 	}
 }

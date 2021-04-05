@@ -1,10 +1,11 @@
 ﻿#pragma once
+#include "VertexArrayObject.h"
 
 namespace gle::Rendering
 {
 	class Renderer
 	{
 	public:
-		void Draw(const VertexArray& vertexArray, const Program& program);
+		//void Draw(const VertexArrayObject& vertexArray, const Program& program);
 	};
 }

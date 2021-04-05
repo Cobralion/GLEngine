@@ -10,4 +10,4 @@
 	#error This does only support windows-x64
 #endif
 
-#define GLENGINE_ERROR(x) std::cout << "[ERROR] " << "[IMPORTANT] " << x << std::endl;
+#define GLENGINE_ERROR(x) gle::Tools::Logger::Error(x)

@@ -13,8 +13,7 @@
     <ClInclude Include="src\Tools\Logger.h" />
     <ClInclude Include="src\Rendering\Buffer.h" />
     <ClInclude Include="src\Rendering\Interfaces\Bindable.h" />
-    <ClInclude Include="src\Rendering\BufferFactory.h" />
-    <ClInclude Include="src\GLEError.h" />
+    <ClInclude Include="src\Rendering\VertexArrayObject.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\GLEngine.cpp" />
@@ -23,7 +22,7 @@
     <ClCompile Include="src\Rendering\WindowManager.cpp" />
     <ClCompile Include="src\Tools\Timer.cpp" />
     <ClCompile Include="src\Rendering\Buffer.cpp" />
-    <ClCompile Include="src\Rendering\BufferFactory.cpp" />
+    <ClCompile Include="src\Rendering\VertexArrayObject.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />

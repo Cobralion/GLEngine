@@ -98,12 +98,11 @@
     <ClInclude Include="src\Core.h" />
     <ClInclude Include="src\GLE.h" />
     <ClInclude Include="src\GLEngine.h" />
-    <ClInclude Include="src\GLEError.h" />
-    <ClInclude Include="src\Rendering\BufferFactory.h" />
     <ClInclude Include="src\Rendering\Interfaces\Bindable.h" />
     <ClInclude Include="src\Rendering\Buffer.h" />
     <ClInclude Include="src\Rendering\OpenGL.h" />
     <ClInclude Include="src\Rendering\Renderer.h" />
+    <ClInclude Include="src\Rendering\VertexArrayObject.h" />
     <ClInclude Include="src\Rendering\Window.h" />
     <ClInclude Include="src\Rendering\WindowManager.h" />
     <ClInclude Include="src\Tools\Logger.h" />
@@ -113,8 +112,8 @@
   <ItemGroup>
     <ClCompile Include="src\GLEngine.cpp" />
     <ClCompile Include="src\Rendering\Buffer.cpp" />
-    <ClCompile Include="src\Rendering\BufferFactory.cpp" />
     <ClCompile Include="src\Rendering\Renderer.cpp" />
+    <ClCompile Include="src\Rendering\VertexArrayObject.cpp" />
     <ClCompile Include="src\Rendering\Window.cpp" />
     <ClCompile Include="src\Rendering\WindowManager.cpp" />
     <ClCompile Include="src\Tools\Timer.cpp" />

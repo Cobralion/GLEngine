@@ -1,6 +1,7 @@
 #include "Window.h"
 
 #include "../Core.h"
+#include "../Tools/Logger.h"
 #include <iostream>
 
 namespace gle::Rendering

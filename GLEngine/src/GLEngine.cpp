@@ -15,7 +15,7 @@ namespace gle
 
 		m_timer = Tools::Timer();
 
-		Logger::Info("GLEngine initalized!");
+		Logger::Info("GLEngine initialized!");
 		
 		if (glewInit() != GLEW_OK)
 			GLENGINE_ERROR("Can not initalize GLEW.");
