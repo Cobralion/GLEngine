@@ -61,7 +61,7 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
-      <AdditionalIncludeDirectories>$(SolutionDir)GLEngine\src;$(SolutionDir)GLEngine\vendor\glew-2.1.0\include;$(SolutionDir)GLEngine\vendor\glfw-3.3.3_x64\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)GLEngine\src;$(SolutionDir)GLEngine\vendor\glew-2.1.0\include;$(SolutionDir)GLEngine\vendor\glfw-3.3.3_x64\include;$(SolutionDir)GLEngine\vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -81,7 +81,7 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
-      <AdditionalIncludeDirectories>$(SolutionDir)GLEngine\src;$(SolutionDir)GLEngine\vendor\glew-2.1.0\include;$(SolutionDir)GLEngine\vendor\glfw-3.3.3_x64\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)GLEngine\src;$(SolutionDir)GLEngine\vendor\glew-2.1.0\include;$(SolutionDir)GLEngine\vendor\glfw-3.3.3_x64\include;$(SolutionDir)GLEngine\vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

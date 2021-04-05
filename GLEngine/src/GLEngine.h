@@ -4,6 +4,7 @@
 #include "Rendering/Renderer.h"
 #include "Rendering/Window.h"
 #include "Rendering/WindowManager.h"
+#include "Tools/Timer.h"
 
 namespace gle
 {
@@ -18,6 +19,7 @@ namespace gle
 		Rendering::Window* m_window;
 		Rendering::Renderer* m_renderer;
 		Rendering::WindowManager* m_windowManager;
+		Tools::Timer m_timer;
 
 	protected:
 		GLEngine();

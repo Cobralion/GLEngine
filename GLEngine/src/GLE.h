@@ -5,4 +5,5 @@
 #include "GLEngine.h"
 #include "Rendering/Renderer.h"
 #include "Rendering/Window.h"
+#include "Tools/Logger.h"
 #include "Rendering/WindowManager.h"

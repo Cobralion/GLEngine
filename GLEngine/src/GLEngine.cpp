@@ -2,16 +2,20 @@
 
 #include <iostream>
 #include "Rendering/OpenGL.h"
-
-#include <chrono>
+#include "Tools/Logger.h"
 
 namespace gle
 {
+	using namespace Tools;
 	GLEngine::GLEngine()
 	{
 		m_window = new Rendering::Window();
 		m_windowManager = new Rendering::WindowManager(m_window);
 		m_renderer = new Rendering::Renderer();
+
+		m_timer = Tools::Timer();
+
+		Logger::Info("GLEngine initalized!");
 		
 		if (glewInit() != GLEW_OK)
 			GLENGINE_ERROR("Can not initalize GLEW.");
@@ -25,15 +29,13 @@ namespace gle
 
 	void GLEngine::Run()
 	{
-		using namespace std::chrono;
-		auto oldTime = high_resolution_clock::now();
-		steady_clock::time_point newTime;
-		
+		m_timer.Start();
 		while (!m_windowManager->GetClose())
 		{
-			newTime = high_resolution_clock::now();
-			const auto deltaTime = duration<float, std::milli>(newTime - oldTime).count();
-			oldTime = newTime;
+			m_timer.Stop();
+			const auto deltaTime = m_timer.ElapsedTime();
+			m_timer.Reset();
+			m_timer.Start();
 			
 			Update(deltaTime);
 			Draw(m_renderer);

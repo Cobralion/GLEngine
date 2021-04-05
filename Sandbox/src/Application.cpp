@@ -9,8 +9,8 @@ void Application::Update(float deltaTime)
 	
 	if(m_elapsed_time >= 1000)
 	{
-		std::cout << "Average delta time was " << (int) m_elapsed_time / m_frames << " ms." << std::endl;
-		std::cout << "Average frame rate was " << (int) m_frames << " fps." << std::endl;
+		gle::Tools::Logger::Info("Average delta time was " + std::to_string((int)m_elapsed_time / m_frames) + " ms.");
+		gle::Tools::Logger::Info("Average frame rate was " + std::to_string((int)m_frames) + " fps.");
 		m_elapsed_time = 0;
 		m_frames = 0;
 	}
